@@ -36,3 +36,7 @@ extra:
 markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
+
+plugins:
+  - mike:
+      deploy_prefix: 'pterodactyl-on-k8s'
