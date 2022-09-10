@@ -1,0 +1,38 @@
+site_name: Pterodactyl on Kubernetes Docs
+site_url: https://docs.acaslab.com/pterodactyl-on-k8s
+
+repo_url: https://github.com/acaslab/pterodactyl-on-k8s/
+repo_name: acaslab/pterodactyl-on-k8s
+
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Install: getting-started/install.md
+    - Upgrade: getting-started/upgrade.md
+    - Uninstall: getting-started/uninstall.md
+  - Roadmap: roadmap.md
+  - Internals:
+    - Releases: internals/releases.md
+    - Docker build: internals/docker-build.md
+  - Changelog: changelog.md
+
+theme:
+  name: material
+  locale: en
+  highlightjs: true
+  features:
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.sections
+    - toc.follow
+
+extra:
+  version:
+    provider: mike
+    default: latest
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
