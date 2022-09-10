@@ -1,6 +1,5 @@
 site_name: Pterodactyl on Kubernetes Docs
-site_url: https://docs.acaslab.com/pterodactyl-on-k8s/
-site_dir: pterodactyl-on-k8s
+site_url: https://acaslab.github.io/pterodactyl-on-k8s/
 
 repo_url: https://github.com/acaslab/pterodactyl-on-k8s/
 repo_name: acaslab/pterodactyl-on-k8s
@@ -40,4 +39,4 @@ markdown_extensions:
 
 plugins:
   - mike:
-      deploy_prefix: 'pterodactyl-on-k8s'
+      deploy_prefix: '/pterodactyl-on-k8s/'

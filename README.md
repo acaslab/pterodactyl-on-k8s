@@ -8,4 +8,4 @@ Currently this project is work-in-progress and is not considered production read
 
 ## Docs
 
-https://docs.acaslab.com/pterodactyl-on-k8s
+https://acaslab.github.io/pterodactyl-on-k8s/
