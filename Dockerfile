@@ -9,7 +9,11 @@ RUN apt update && apt -y install \
 # Add Ondrej Sury's PPA for PHP
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
-RUN apt update
+RUN apt update && \
+  rm -rf /var/lib/apt && \
+  rm -rf /var/lib/dpkg && \
+  rm -rf /var/lib/cache && \
+  rm -rf /var/lib/log
 
 # Install PHP 8.1
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt -y install \
