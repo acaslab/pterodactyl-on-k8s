@@ -1,5 +1,5 @@
 site_name: Pterodactyl on Kubernetes Docs
-site_url: https://docs.acaslab.com/pterodactyl-on-k8s
+site_url: https://docs.acaslab.com/pterodactyl-on-k8s/
 
 repo_url: https://github.com/acaslab/pterodactyl-on-k8s/
 repo_name: acaslab/pterodactyl-on-k8s
