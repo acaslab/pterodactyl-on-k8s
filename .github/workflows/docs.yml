@@ -30,6 +30,12 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
       - name: build and push
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
           mike deploy ${{ github.ref_name }} latest --push --update-aliases
           mike set-default --push latest
+      - name: build and push
+        if: startsWith(github.ref, 'refs/heads/')
+        run: |
+          mike deploy dev --push --update-aliases
+          mike set-default --push dev
