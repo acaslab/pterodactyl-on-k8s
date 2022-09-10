@@ -38,7 +38,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}:docker"
+          context: .
           push: true
           tags: latest
           labels: ${{ steps.meta.outputs.labels }}
