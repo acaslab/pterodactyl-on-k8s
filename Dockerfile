@@ -2,9 +2,10 @@ FROM ubuntu:22.04 as base
 
 RUN apt update && apt -y install \
   software-properties-common \
-  curl apt-transport-https \
+  apt-transport-https \
   ca-certificates \
-  gnupg
+  gnupg \
+  curl
 
 # Add Ondrej Sury's PPA for PHP
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
@@ -24,8 +25,8 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt -y install \
   php8.1-fpm \
   php8.1-curl \
   php8.1-zip \
-  tar \
   unzip \
+  tar \
   git
 
 RUN rm -rf /var/lib/apt && \
