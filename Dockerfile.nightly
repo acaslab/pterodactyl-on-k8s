@@ -1,0 +1,63 @@
+FROM ubuntu:22.04 as base
+
+RUN apt update && apt -y install \
+  software-properties-common \
+  apt-transport-https \
+  ca-certificates \
+  gnupg \
+  curl
+
+# Add Ondrej Sury's PPA for PHP
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
+  && apt update
+
+# Install PHP 8.1
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt -y install \
+  php8.1 \
+  php8.1-common \
+  php8.1-cli \
+  php8.1-gd \
+  php8.1-mysql \
+  php8.1-mbstring \
+  php8.1-bcmath \
+  php8.1-xml \
+  php8.1-fpm \
+  php8.1-curl \
+  php8.1-zip \
+  unzip \
+  tar \
+  git
+
+FROM base as builder
+
+# Add Node.js 18.x PPA
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sh -
+
+# Install Node.js & Yarn to build assets
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install nodejs -y && npm i -g yarn
+
+RUN rm -rf /var/lib/apt && \
+  rm -rf /var/lib/dpkg && \
+  rm -rf /var/lib/cache && \
+  rm -rf /var/lib/log
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Download the Pterodactyl Panel
+RUN git clone https://github.com/pterodactyl/panel.git /var/www/pterodactyl
+
+WORKDIR /var/www/pterodactyl
+
+# Install Node.js dependencies & build assets
+RUN yarn install --frozen-lockfile && yarn run build
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+FROM base as app
+
+WORKDIR /var/www/pterodactyl
+USER www-data
+
+COPY --from=builder --chown=www-data:www-data /var/www/pterodactyl /var/www/pterodactyl
