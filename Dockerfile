@@ -53,12 +53,9 @@ RUN tar -xzvf panel.tar.gz
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Change the owner of the files, recursively
-RUN chown -R www-data:www-data /var/www/pterodactyl
-
 FROM base as app
 
 WORKDIR /var/www/pterodactyl
 USER www-data
 
-COPY --from=builder /var/www/pterodactyl /var/www/ptereodactyl
+COPY --from=builder --chown=www-data:www-data /var/www/pterodactyl /var/www/pterodactyl
