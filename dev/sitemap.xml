@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/changelog/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/roadmap/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/getting-started/install/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/getting-started/uninstall/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/getting-started/upgrade/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/internals/docker-build/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://acaslab.github.io/pterodactyl-on-k8s/dev/internals/releases/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
